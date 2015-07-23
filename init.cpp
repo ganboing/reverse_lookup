@@ -39,7 +39,7 @@ int main(int /*argc*/, char** argv){
 		printf("%s %" PRIu32 " ", cmdline + cmd_len + 1, curr.ip);
 		fflush(stdout);
 		int ret = system(cmdline);
-		printf(" ret=%d\n", ret);
+		putc('\n', stdout);
 	}while(++i != s);
 	return 0;
 }
