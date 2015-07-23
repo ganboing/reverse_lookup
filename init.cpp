@@ -38,7 +38,8 @@ int main(int /*argc*/, char** argv){
 		sprintf(cmdline + cmd_len + 1, "%" PRIu8 ".%" PRIu8 ".%" PRIu8 ".%" PRIu8, curr.d, curr.c, curr.b, curr.a);
 		printf("%s %" PRIu32 " ", cmdline + cmd_len + 1, curr.ip);
 		fflush(stdout);
-		system(cmdline);
+		int ret = system(cmdline);
+		printf(" ret=%d\n", ret);
 	}while(++i != s);
 	return 0;
 }
